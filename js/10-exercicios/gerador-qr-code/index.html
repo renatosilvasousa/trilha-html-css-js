@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Guides&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="scripts/scripts.js" defer></script>
+    <title>Gerador de QR Codes</title>
+</head>
+<body>
+    <div id="container">
+        <header id="qr-generator-header">
+            <h1>Gerador de QR Code</h1>
+            <span>Insira uma url ou texto para gerar um QR Code</span>
+        </header>
+        <main id="qr-generator-form">
+            <form action="" id="qr-code-generator">
+                <input type="text" id="qr-code-src" placeholder="Digite a URL ou texto...">
+                <button type="submit" id="qr-generate">Gerar QR Code</button>
+            </form>
+        </main>
+        <footer id="qr-generated" class="">
+            <figure id="qr-img-container">
+                <img src="styles/qr-code.png" alt="QR Code Gerado" id="qr-code">
+            </figure>
+            <div id="qr-link-container">
+                <p>
+                    Qr Code gerado a partir de:
+                </p>
+                <p id="qr-link">Link ou texto digitado...</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

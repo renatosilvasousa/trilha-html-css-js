@@ -1,0 +1,14 @@
+#btn-container{
+    padding: 30px;
+    background-color: green;
+    border-radius: 5px;
+}
+
+#mousearea{
+    padding: 30px;
+    background-color: red;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    margin-bottom: 2000px;
+}

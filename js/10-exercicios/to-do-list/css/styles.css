@@ -1,0 +1,210 @@
+/* =======================
+   RESET & BASE
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --text-color-dark: #0a1931;
+  --text-color-light: #f6fafd;
+
+  --background-dark: #0a1931;
+  --background-light: #f6fafd;
+  --background-soft: #1a3d63;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: 
+    linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+    url('../img/background.jpg');
+
+  background-position: center;
+  background-size: cover;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.05);
+
+  z-index: -1; /* fica atrás do form */
+}
+
+/* =======================
+   ELEMENTOS GERAIS
+======================= */
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: .3rem .6rem;
+  font-size: 1rem;
+  cursor: pointer;
+
+  background-color: var(--background-light);
+  color: var(--text-color-dark);
+  border: 1px solid var(--background-dark);
+
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: var(--background-dark);
+  color: var(--text-color-light);
+}
+
+i {
+  pointer-events: none;
+}
+
+input,
+select {
+  padding: .3rem .6rem;
+}
+
+.hide {
+  display: none !important;
+}
+
+p,
+h4 {
+  margin-bottom: .5rem;
+}
+
+/* =======================
+   LAYOUT PRINCIPAL
+======================= */
+.to-do-container {
+  width: 100%;
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--background-light);
+  border: 1px solid var(--background-dark);
+}
+
+/* =======================
+   HEADER
+======================= */
+header {
+  padding: 1.2rem;
+  margin-bottom: .7rem;
+
+  text-align: center;
+  color: var(--text-color-light);
+  background-color: var(--background-soft);
+}
+
+/* =======================
+   FORMULÁRIOS
+======================= */
+#to-do-form,
+#edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+
+  padding: 1.2rem;
+  border-bottom: 1px solid var(--background-dark);
+}
+
+.form-control {
+  display: flex;
+}
+
+.form-control input {
+  width: 100%;
+}
+
+#to-do-form input,
+#edit-form input {
+  margin-right: 2px;
+}
+
+/* =======================
+   TOOLBAR
+======================= */
+#toolbar {
+  display: flex;
+  justify-content: space-around;
+  gap: .3rem;
+
+  padding: 1.2rem;
+}
+
+#filter,
+#search {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#search-form {
+  display: flex;
+}
+
+#search input {
+  width: 100%;
+  margin-right: 2px;
+}
+
+/* =======================
+   LISTA DE TAREFAS
+======================= */
+#to-do-list {
+  border-top: 1px solid var(--background-dark);
+}
+
+.to-do {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  border-top: 1px solid var(--background-dark);
+  border-bottom: 1px solid var(--background-dark);
+
+  gap: .3rem;
+  padding: 1.5rem 1rem;
+
+  transition: .3s ease;
+}
+
+.to-do h3 {
+  flex: 1;
+}
+
+.done{
+   background-color: var(--background-soft);
+   border-top: 1px solid var(--background-light);
+   border-bottom: 1px solid var(--background-light);
+
+   color: var(--text-color-light);
+}
+
+.done h3{
+   font-style: italic;
+   text-decoration: line-through;
+}

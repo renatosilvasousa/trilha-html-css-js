@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+:root{
+    --background-gradient: linear-gradient(
+    45deg, 
+    #190019 10%, 
+    #2b124c 35%,
+    #522b5b 45%,
+    #854f6c 50%,
+    #2b124c 70%,
+    #190019 95%
+    );
+    --main-color: #522b5b;
+    --text-color-1: #333;
+    --text-color-2: #dadbda;
+    --soft-background: #b3aeae;
+}
+
+body{
+    background: var(--background-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+}
+
+#container{
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px rgba(33, 31, 31, 0.8);
+    background-color: var(--soft-background);
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+#qr-generator-header{
+    background-color: var(--main-color);
+    color: var(--text-color-2);
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    padding: 25px;
+}
+
+#qr-generator-header span{
+    font-size: 1rem;
+}
+
+#qr-generator-form{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#qr-code-generator{
+    width: 80%;
+}
+
+#qr-generator-form input[type='text'], button{
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+#qr-generate{
+    background-color: var(--main-color);
+    color: var(--text-color-2);
+    margin-top: 10px;
+}
+
+#qr-generate:hover{
+    cursor: pointer;
+}
+
+#qr-generated{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    height: 0;
+}
+
+#qr-generated.ativo{
+    opacity: 1;
+    height: auto;
+}
+
+#qr-img-container{
+    padding: 25px;
+    display: none;
+}
+
+#qr-generated img{
+    max-width: 100%;
+}
+
+#qr-link-container{
+    text-align: center;
+    margin-bottom: 30px;
+    width: 80%;
+    max-width: 80%;
+    padding: 25px;
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#qr-link{
+    margin-top: 5px;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+
+  #qr-generator-header h1{
+    display: none;
+  }
+
+  #qr-generator-header span{
+    font-weight: 900;
+  }
+}
